@@ -1,0 +1,58 @@
+<div class="modal-header">
+    <h4 class="modal-title">@if(seaReport) { Editar reporte } @else { Nuevo reporte }</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss()"></button>
+</div>
+<form [formGroup]="seaReportForm">
+    <div class="modal-body">
+        <div class="mb-3">
+            <label for="sea-report-zoneId" class="form-label">ID de zona</label>
+            <input type="number" class="form-control" id="sea-report-zoneId" formControlName="zoneId">
+        </div>
+        <div class="mb-3">
+            <label for="sea-report-spotId" class="form-label">ID de spot</label>
+            <input type="number" class="form-control" id="sea-report-spotId" formControlName="spotId">
+        </div>
+        <div class="mb-3">
+            <label for="sea-report-spotName" class="form-label">Spot</label>
+            <input type="text" class="form-control" id="sea-report-spotName" formControlName="spotName">
+        </div>
+        <div class="mb-3">
+            <label for="sea-report-username" class="form-label">Usuario</label>
+            <input type="text" class="form-control" id="sea-report-username" formControlName="username">
+        </div>
+        <div class="mb-3">
+            <label for="sea-report-date" class="form-label">Fecha</label>
+            <input type="date" class="form-control" id="sea-report-date" formControlName="date">
+        </div>
+        <div class="mb-3">
+            <label for="sea-report-visibility" class="form-label">Visibilidad (m)</label>
+            <input type="number" class="form-control" id="sea-report-visibility" formControlName="visibility">
+        </div>
+        <div class="mb-3">
+            <label for="sea-report-waterTemperature" class="form-label">Temperatura del agua (ºC)</label>
+            <input type="number" class="form-control" id="sea-report-waterTemperature" formControlName="waterTemperature">
+        </div>
+        <div class="mb-3">
+            <label for="sea-report-windDirection" class="form-label">Dirección del viento</label>
+            <select id="sea-report-windDirection" class="form-select" formControlName="windDirection">
+                <option value="" selected>-Selecciona uno-</option>
+                <option value="LEVANTE">LEVANTE</option>
+                <option value="PONIENTE">PONIENTE</option>
+                <option value="NORTE">NORTE</option>
+                <option value="SUR">SUR</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="sea-report-waveHeight" class="form-label">Altura de ola (m)</label>
+            <input type="number" class="form-control" id="sea-report-waveHeight" formControlName="waveHeight">
+        </div>
+        <div class="mb-3">
+            <label for="sea-report-comment" class="form-label">Comentario</label>
+            <textarea id="sea-report-comment" class="form-control" rows="3" formControlName="comment"></textarea>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-secondary" (click)="activeModal.dismiss()">Cancelar</button>
+        <button type="button" class="btn btn-primary" (click)="formSubmit()">Guardar</button>
+    </div>
+</form>

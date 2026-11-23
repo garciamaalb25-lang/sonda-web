@@ -1,0 +1,14 @@
+<section class="card">
+    <div class="card-body">
+        <h4 class="card-title">{{seaReport()?.spotName}}</h4>
+        <p class="card-text mb-1">Usuario: {{seaReport()?.username}}</p>
+        <p class="card-text mb-1">Fecha: {{seaReport()?.date}}</p>
+        <p class="card-text mb-1">Visibilidad (m): {{seaReport()?.visibility}}</p>
+        <p class="card-text mb-1">Agua (ºC): {{seaReport()?.waterTemperature}}</p>
+        <p class="card-text mb-1">Viento: {{seaReport()?.windDirection}}</p>
+        <p class="card-text mb-1">Ola (m): {{seaReport()?.waveHeight}}</p>
+        <p class="card-text mb-1">Comentario: {{seaReport()?.comment}}</p>
+        <button type="button" class="btn btn-sm btn-primary mt-2 me-2" (click)="emitEditClicked()">Editar</button>
+        <button type="button" class="btn btn-sm btn-danger mt-2" (click)="emitDeleteClicked()">Eliminar</button>
+    </div>
+</section>

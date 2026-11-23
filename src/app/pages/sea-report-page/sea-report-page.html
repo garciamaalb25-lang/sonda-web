@@ -1,0 +1,11 @@
+<h1>Reportes</h1>
+<button type="button" class="btn btn-primary mb-3" (click)="openAddModal()">Añadir reporte</button>
+
+<div class="row">
+    @for(seaReport of seaReportList(); track seaReport.id) {
+    <div class="col-md-3 mb-3">
+        <app-sea-report-item-component [seaReport]="seaReport" (editClicked)="openEditModal($event)"
+            (deleteClicked)="openDeleteModal($event)"></app-sea-report-item-component>
+    </div>
+    }
+</div>
