@@ -1,0 +1,40 @@
+<div class="modal-header">
+    <h4 class="modal-title">@if(license) { Editar licencia } @else { Nuevo licencia }</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss()"></button>
+</div>
+<form [formGroup]="licenseForm">
+    <div class="modal-body">
+        <div class="mb-3">
+            <label for="license-userId" class="form-label">ID de usuario</label>
+            <input type="number" class="form-control" id="license-userId" formControlName="userId">
+        </div>
+        <div class="mb-3">
+            <label for="license-number" class="form-label">Número</label>
+            <input type="text" class="form-control" id="license-number" formControlName="number">
+        </div>
+        <div class="mb-3">
+            <label for="license-type" class="form-label">Tipo</label>
+            <input type="text" class="form-control" id="license-type" formControlName="type">
+        </div>
+        <div class="mb-3">
+            <label for="license-region" class="form-label">Comunidad</label>
+            <input type="text" class="form-control" id="license-region" formControlName="region">
+        </div>
+        <div class="mb-3">
+            <label for="license-issueDate" class="form-label">Fecha de expedición</label>
+            <input type="date" class="form-control" id="license-issueDate" formControlName="issueDate">
+        </div>
+        <div class="mb-3">
+            <label for="license-expirationDate" class="form-label">Fecha de caducidad</label>
+            <input type="date" class="form-control" id="license-expirationDate" formControlName="expirationDate">
+        </div>
+        <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="license-valid" formControlName="valid">
+            <label class="form-check-label" for="license-valid">Válida</label>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-secondary" (click)="activeModal.dismiss()">Cancelar</button>
+        <button type="button" class="btn btn-primary" (click)="formSubmit()">Guardar</button>
+    </div>
+</form>

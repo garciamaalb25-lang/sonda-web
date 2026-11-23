@@ -1,0 +1,11 @@
+<h1>Licencias</h1>
+<button type="button" class="btn btn-primary mb-3" (click)="openAddModal()">Añadir licencia</button>
+
+<div class="row">
+    @for(license of licenseList(); track license.id) {
+    <div class="col-md-3 mb-3">
+        <app-license-item-component [license]="license" (editClicked)="openEditModal($event)"
+            (deleteClicked)="openDeleteModal($event)"></app-license-item-component>
+    </div>
+    }
+</div>
