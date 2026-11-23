@@ -1,0 +1,63 @@
+<div class="modal-header">
+    <h4 class="modal-title">@if(spot) { Editar spot } @else { Nuevo spot }</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss()"></button>
+</div>
+<form [formGroup]="spotForm">
+    <div class="modal-body">
+        <div class="mb-3">
+            <label for="spot-name" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="spot-name" formControlName="name">
+        </div>
+        <div class="mb-3">
+            <label for="spot-zoneId" class="form-label">ID de zona</label>
+            <input type="number" class="form-control" id="spot-zoneId" formControlName="zoneId">
+        </div>
+        <div class="mb-3">
+            <label for="spot-zoneName" class="form-label">Zona</label>
+            <input type="text" class="form-control" id="spot-zoneName" formControlName="zoneName">
+        </div>
+        <div class="mb-3">
+            <label for="spot-latitude" class="form-label">Latitud</label>
+            <input type="number" class="form-control" id="spot-latitude" formControlName="latitude">
+        </div>
+        <div class="mb-3">
+            <label for="spot-longitude" class="form-label">Longitud</label>
+            <input type="number" class="form-control" id="spot-longitude" formControlName="longitude">
+        </div>
+        <div class="mb-3">
+            <label for="spot-bottomType" class="form-label">Tipo de fondo</label>
+            <select id="spot-bottomType" class="form-select" formControlName="bottomType">
+                <option value="" selected>-Selecciona uno-</option>
+                <option value="ROCA">ROCA</option>
+                <option value="ARENA">ARENA</option>
+                <option value="POSIDONIA">POSIDONIA</option>
+                <option value="MIXTO">MIXTO</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="spot-minDepth" class="form-label">Profundidad mínima (m)</label>
+            <input type="number" class="form-control" id="spot-minDepth" formControlName="minDepth">
+        </div>
+        <div class="mb-3">
+            <label for="spot-maxDepth" class="form-label">Profundidad máxima (m)</label>
+            <input type="number" class="form-control" id="spot-maxDepth" formControlName="maxDepth">
+        </div>
+        <div class="mb-3">
+            <label for="spot-legalStatus" class="form-label">Estado legal</label>
+            <select id="spot-legalStatus" class="form-select" formControlName="legalStatus">
+                <option value="" selected>-Selecciona uno-</option>
+                <option value="PERMITIDA">PERMITIDA</option>
+                <option value="RESERVA_PROTEGIDA">RESERVA_PROTEGIDA</option>
+                <option value="RESTRINGIDA">RESTRINGIDA</option>
+            </select>
+        </div>
+        <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="spot-validated" formControlName="validated">
+            <label class="form-check-label" for="spot-validated">Validado</label>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-secondary" (click)="activeModal.dismiss()">Cancelar</button>
+        <button type="button" class="btn btn-primary" (click)="formSubmit()">Guardar</button>
+    </div>
+</form>

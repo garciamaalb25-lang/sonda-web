@@ -1,0 +1,11 @@
+<h1>Spots</h1>
+<button type="button" class="btn btn-primary mb-3" (click)="openAddModal()">Añadir spot</button>
+
+<div class="row">
+    @for(spot of spotList(); track spot.id) {
+    <div class="col-md-3 mb-3">
+        <app-spot-item-component [spot]="spot" (editClicked)="openEditModal($event)"
+            (deleteClicked)="openDeleteModal($event)"></app-spot-item-component>
+    </div>
+    }
+</div>

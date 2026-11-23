@@ -1,0 +1,13 @@
+<section class="card">
+    <div class="card-body">
+        <h4 class="card-title">{{spot()?.name}}</h4>
+        <p class="card-text mb-1">Zona: {{spot()?.zoneName}}</p>
+        <p class="card-text mb-1">Fondo: {{spot()?.bottomType}}</p>
+        <p class="card-text mb-1">Prof. mínima (m): {{spot()?.minDepth}}</p>
+        <p class="card-text mb-1">Prof. máxima (m): {{spot()?.maxDepth}}</p>
+        <p class="card-text mb-1">Estado legal: {{spot()?.legalStatus}}</p>
+        <p class="card-text mb-1">Validado: {{spot()?.validated ? 'Sí' : 'No'}}</p>
+        <button type="button" class="btn btn-sm btn-primary mt-2 me-2" (click)="emitEditClicked()">Editar</button>
+        <button type="button" class="btn btn-sm btn-danger mt-2" (click)="emitDeleteClicked()">Eliminar</button>
+    </div>
+</section>
