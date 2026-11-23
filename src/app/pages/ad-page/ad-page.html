@@ -1,0 +1,11 @@
+<h1>Anuncios</h1>
+<button type="button" class="btn btn-primary mb-3" (click)="openAddModal()">Añadir anuncio</button>
+
+<div class="row">
+    @for(ad of adList(); track ad.id) {
+    <div class="col-md-3 mb-3">
+        <app-ad-item-component [ad]="ad" (editClicked)="openEditModal($event)"
+            (deleteClicked)="openDeleteModal($event)"></app-ad-item-component>
+    </div>
+    }
+</div>

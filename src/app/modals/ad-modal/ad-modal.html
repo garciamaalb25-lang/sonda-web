@@ -1,0 +1,60 @@
+<div class="modal-header">
+    <h4 class="modal-title">@if(ad) { Editar anuncio } @else { Nuevo anuncio }</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss()"></button>
+</div>
+<form [formGroup]="adForm">
+    <div class="modal-body">
+        <div class="mb-3">
+            <label for="ad-title" class="form-label">Título</label>
+            <input type="text" class="form-control" id="ad-title" formControlName="title">
+        </div>
+        <div class="mb-3">
+            <label for="ad-category" class="form-label">Categoría</label>
+            <select id="ad-category" class="form-select" formControlName="category">
+                <option value="" selected>-Selecciona uno-</option>
+                <option value="FUSIL">FUSIL</option>
+                <option value="TRAJE">TRAJE</option>
+                <option value="ALETAS">ALETAS</option>
+                <option value="GAFAS">GAFAS</option>
+                <option value="CINTURON">CINTURON</option>
+                <option value="ORDENADOR">ORDENADOR</option>
+                <option value="OTROS">OTROS</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="ad-price" class="form-label">Precio (€)</label>
+            <input type="number" class="form-control" id="ad-price" formControlName="price">
+        </div>
+        <div class="mb-3">
+            <label for="ad-condition" class="form-label">Estado del producto</label>
+            <select id="ad-condition" class="form-select" formControlName="condition">
+                <option value="" selected>-Selecciona uno-</option>
+                <option value="NUEVO">NUEVO</option>
+                <option value="COMO_NUEVO">COMO_NUEVO</option>
+                <option value="USADO">USADO</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="ad-city" class="form-label">Ciudad</label>
+            <input type="text" class="form-control" id="ad-city" formControlName="city">
+        </div>
+        <div class="mb-3">
+            <label for="ad-mainPhotoUrl" class="form-label">URL de la foto</label>
+            <input type="text" class="form-control" id="ad-mainPhotoUrl" formControlName="mainPhotoUrl">
+        </div>
+        <div class="mb-3">
+            <label for="ad-status" class="form-label">Estado del anuncio</label>
+            <select id="ad-status" class="form-select" formControlName="status">
+                <option value="" selected>-Selecciona uno-</option>
+                <option value="PENDIENTE">PENDIENTE</option>
+                <option value="PUBLICADO">PUBLICADO</option>
+                <option value="RECHAZADO">RECHAZADO</option>
+                <option value="VENDIDO">VENDIDO</option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-secondary" (click)="activeModal.dismiss()">Cancelar</button>
+        <button type="button" class="btn btn-primary" (click)="formSubmit()">Guardar</button>
+    </div>
+</form>
