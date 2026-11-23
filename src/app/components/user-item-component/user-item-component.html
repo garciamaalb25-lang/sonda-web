@@ -1,0 +1,12 @@
+<section class="card">
+    <div class="card-body">
+        <h4 class="card-title">{{user()?.username}}</h4>
+        <p class="card-text mb-1">Email: {{user()?.email}}</p>
+        <p class="card-text mb-1">Nivel: {{user()?.experienceLevel}}</p>
+        <p class="card-text mb-1">Rol: {{user()?.role}}</p>
+        <p class="card-text mb-1">Estado: {{user()?.status}}</p>
+        <p class="card-text mb-1">Alta: {{user()?.createdAt}}</p>
+        <button type="button" class="btn btn-sm btn-primary mt-2 me-2" (click)="emitEditClicked()">Editar</button>
+        <button type="button" class="btn btn-sm btn-danger mt-2" (click)="emitDeleteClicked()">Eliminar</button>
+    </div>
+</section>
