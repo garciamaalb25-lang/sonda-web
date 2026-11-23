@@ -1,0 +1,11 @@
+<div class="modal-header">
+    <h4 class="modal-title">Eliminar</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="emitNoCancel()"></button>
+</div>
+<div class="modal-body">
+    <p>¿Seguro que quieres eliminar {{itemName}}?</p>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-outline-secondary" (click)="emitNoCancel()">No, cancelar</button>
+    <button type="button" class="btn btn-danger" (click)="emitYesDelete()">Sí, eliminar</button>
+</div>
