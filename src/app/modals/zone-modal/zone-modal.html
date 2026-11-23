@@ -1,0 +1,28 @@
+<div class="modal-header">
+    <h4 class="modal-title">@if(zone) { Editar zona } @else { Nuevo zona }</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss()"></button>
+</div>
+<form [formGroup]="zoneForm">
+    <div class="modal-body">
+        <div class="mb-3">
+            <label for="zone-name" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="zone-name" formControlName="name">
+        </div>
+        <div class="mb-3">
+            <label for="zone-province" class="form-label">Provincia</label>
+            <input type="text" class="form-control" id="zone-province" formControlName="province">
+        </div>
+        <div class="mb-3">
+            <label for="zone-latitude" class="form-label">Latitud</label>
+            <input type="number" class="form-control" id="zone-latitude" formControlName="latitude">
+        </div>
+        <div class="mb-3">
+            <label for="zone-longitude" class="form-label">Longitud</label>
+            <input type="number" class="form-control" id="zone-longitude" formControlName="longitude">
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-secondary" (click)="activeModal.dismiss()">Cancelar</button>
+        <button type="button" class="btn btn-primary" (click)="formSubmit()">Guardar</button>
+    </div>
+</form>

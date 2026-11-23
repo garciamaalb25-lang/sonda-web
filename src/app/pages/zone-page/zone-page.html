@@ -1,0 +1,11 @@
+<h1>Zonas</h1>
+<button type="button" class="btn btn-primary mb-3" (click)="openAddModal()">Añadir zona</button>
+
+<div class="row">
+    @for(zone of zoneList(); track zone.id) {
+    <div class="col-md-3 mb-3">
+        <app-zone-item-component [zone]="zone" (editClicked)="openEditModal($event)"
+            (deleteClicked)="openDeleteModal($event)"></app-zone-item-component>
+    </div>
+    }
+</div>

@@ -1,0 +1,10 @@
+<section class="card">
+    <div class="card-body">
+        <h4 class="card-title">{{zone()?.name}}</h4>
+        <p class="card-text mb-1">Provincia: {{zone()?.province}}</p>
+        <p class="card-text mb-1">Latitud: {{zone()?.latitude}}</p>
+        <p class="card-text mb-1">Longitud: {{zone()?.longitude}}</p>
+        <button type="button" class="btn btn-sm btn-primary mt-2 me-2" (click)="emitEditClicked()">Editar</button>
+        <button type="button" class="btn btn-sm btn-danger mt-2" (click)="emitDeleteClicked()">Eliminar</button>
+    </div>
+</section>
