@@ -1,0 +1,13 @@
+<section class="card">
+    <div class="card-body">
+        <h4 class="card-title">{{forecast()?.zoneName}}</h4>
+        <p class="card-text mb-1">Fecha: {{forecast()?.date}}</p>
+        <p class="card-text mb-1">Visibilidad (m): {{forecast()?.visibility}}</p>
+        <p class="card-text mb-1">Nivel: {{forecast()?.visibilityLevel}}</p>
+        <p class="card-text mb-1">Viento: {{forecast()?.windSpeed}}</p>
+        <p class="card-text mb-1">Dirección: {{forecast()?.windDirection}}</p>
+        <p class="card-text mb-1">Apta: {{forecast()?.suitable ? 'Sí' : 'No'}}</p>
+        <button type="button" class="btn btn-sm btn-primary mt-2 me-2" (click)="emitEditClicked()">Editar</button>
+        <button type="button" class="btn btn-sm btn-danger mt-2" (click)="emitDeleteClicked()">Eliminar</button>
+    </div>
+</section>

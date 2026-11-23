@@ -1,0 +1,11 @@
+<h1>Previsiones</h1>
+<button type="button" class="btn btn-primary mb-3" (click)="openAddModal()">Añadir previsión</button>
+
+<div class="row">
+    @for(forecast of forecastList(); track forecast.id) {
+    <div class="col-md-3 mb-3">
+        <app-forecast-item-component [forecast]="forecast" (editClicked)="openEditModal($event)"
+            (deleteClicked)="openDeleteModal($event)"></app-forecast-item-component>
+    </div>
+    }
+</div>
