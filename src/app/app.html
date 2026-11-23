@@ -1,0 +1,26 @@
+<header data-bs-theme="dark">
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" routerLink="/">
+        <img src="images/logo.png" alt="Logo SONDA" width="30" height="30">
+        SONDA Admin
+      </a>
+      <ul class="navbar-nav me-auto mb-2 mb-md-0">
+          <li class="nav-item"><a href="#" class="nav-link" routerLink="/users">Usuarios</a> </li>
+          <li class="nav-item"><a href="#" class="nav-link" routerLink="/licenses">Licencias</a> </li>
+          <li class="nav-item"><a href="#" class="nav-link" routerLink="/zones">Zonas</a> </li>
+          <li class="nav-item"><a href="#" class="nav-link" routerLink="/forecasts">Previsiones</a> </li>
+          <li class="nav-item"><a href="#" class="nav-link" routerLink="/sea-reports">Reportes</a> </li>
+          <li class="nav-item"><a href="#" class="nav-link" routerLink="/spots">Spots</a> </li>
+          <li class="nav-item"><a href="#" class="nav-link" routerLink="/meetups">Quedadas</a> </li>
+          <li class="nav-item"><a href="#" class="nav-link" routerLink="/ads">Anuncios</a> </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <div class="container-fluid py-4">
+    <router-outlet></router-outlet>
+  </div>
+</main>
