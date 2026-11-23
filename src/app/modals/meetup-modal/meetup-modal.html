@@ -1,0 +1,64 @@
+<div class="modal-header">
+    <h4 class="modal-title">@if(meetup) { Editar quedada } @else { Nuevo quedada }</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss()"></button>
+</div>
+<form [formGroup]="meetupForm">
+    <div class="modal-body">
+        <div class="mb-3">
+            <label for="meetup-title" class="form-label">Título</label>
+            <input type="text" class="form-control" id="meetup-title" formControlName="title">
+        </div>
+        <div class="mb-3">
+            <label for="meetup-spotId" class="form-label">ID de spot</label>
+            <input type="number" class="form-control" id="meetup-spotId" formControlName="spotId">
+        </div>
+        <div class="mb-3">
+            <label for="meetup-spotName" class="form-label">Spot</label>
+            <input type="text" class="form-control" id="meetup-spotName" formControlName="spotName">
+        </div>
+        <div class="mb-3">
+            <label for="meetup-zoneName" class="form-label">Zona</label>
+            <input type="text" class="form-control" id="meetup-zoneName" formControlName="zoneName">
+        </div>
+        <div class="mb-3">
+            <label for="meetup-dateTime" class="form-label">Fecha y hora</label>
+            <input type="datetime-local" class="form-control" id="meetup-dateTime" formControlName="dateTime">
+        </div>
+        <div class="mb-3">
+            <label for="meetup-maxParticipants" class="form-label">Máx. participantes</label>
+            <input type="number" class="form-control" id="meetup-maxParticipants" formControlName="maxParticipants">
+        </div>
+        <div class="mb-3">
+            <label for="meetup-currentParticipants" class="form-label">Participantes actuales</label>
+            <input type="number" class="form-control" id="meetup-currentParticipants" formControlName="currentParticipants">
+        </div>
+        <div class="mb-3">
+            <label for="meetup-minLevel" class="form-label">Nivel mínimo</label>
+            <select id="meetup-minLevel" class="form-select" formControlName="minLevel">
+                <option value="" selected>-Selecciona uno-</option>
+                <option value="PRINCIPIANTE">PRINCIPIANTE</option>
+                <option value="INTERMEDIO">INTERMEDIO</option>
+                <option value="AVANZADO">AVANZADO</option>
+                <option value="EXPERTO">EXPERTO</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="meetup-status" class="form-label">Estado</label>
+            <select id="meetup-status" class="form-select" formControlName="status">
+                <option value="" selected>-Selecciona uno-</option>
+                <option value="ABIERTA">ABIERTA</option>
+                <option value="COMPLETA">COMPLETA</option>
+                <option value="CANCELADA">CANCELADA</option>
+                <option value="FINALIZADA">FINALIZADA</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="meetup-organizer" class="form-label">Organizador</label>
+            <input type="text" class="form-control" id="meetup-organizer" formControlName="organizer">
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-secondary" (click)="activeModal.dismiss()">Cancelar</button>
+        <button type="button" class="btn btn-primary" (click)="formSubmit()">Guardar</button>
+    </div>
+</form>

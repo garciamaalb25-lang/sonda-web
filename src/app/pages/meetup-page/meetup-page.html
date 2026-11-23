@@ -1,0 +1,11 @@
+<h1>Quedadas</h1>
+<button type="button" class="btn btn-primary mb-3" (click)="openAddModal()">Añadir quedada</button>
+
+<div class="row">
+    @for(meetup of meetupList(); track meetup.id) {
+    <div class="col-md-3 mb-3">
+        <app-meetup-item-component [meetup]="meetup" (editClicked)="openEditModal($event)"
+            (deleteClicked)="openDeleteModal($event)"></app-meetup-item-component>
+    </div>
+    }
+</div>
